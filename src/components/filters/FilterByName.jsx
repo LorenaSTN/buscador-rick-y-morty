@@ -1,4 +1,4 @@
-function FilterByName({ onChangeName }) {
+function FilterByName({ onChangeName, valueName }) {
   const handleChangeName = (ev) => {
     onChangeName(ev.target.value);
   };
@@ -10,6 +10,7 @@ function FilterByName({ onChangeName }) {
         id="name"
         placeholder="Nombre del personaje"
         onChange={handleChangeName}
+        value={valueName}
       />
     </div>
   );
