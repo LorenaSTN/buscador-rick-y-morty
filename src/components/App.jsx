@@ -1,13 +1,11 @@
 import "../scss/App.scss";
-
 import CharacterList from "./CharacterList";
 import Logo from "../images/rickandmorty.png";
 import { useEffect, useState } from "react";
 import charactersFromApi from "./services/charactersFromApi";
 import Filters from "./filters/Filters";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, matchPath } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
-import { useLocation, matchPath } from "react-router-dom";
 import localStorage from "./services/localStorage";
 import Reset from "./Reset";
 

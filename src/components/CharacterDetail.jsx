@@ -1,7 +1,6 @@
 import "../scss/main/CharacterDetail.scss";
 import { Link } from "react-router-dom";
-import PhotoNotFound from "../images/characterNotFound.png";
-import ImageNotFound from "../images/rick-morty.webp";
+import ImageNotFound from "../images/rick-morty.png";
 
 function CharacterDetail({ character }) {
   if (!character) {
