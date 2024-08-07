@@ -42,18 +42,6 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         value="unknown"
         checked={valueStatus === "unknown"}
       />
-
-      {/* <select
-        name="status"
-        id="status"
-        onChange={handleChangeStatus}
-        value={valueStatus}
-        className="inputselect"
-      >
-        <option value="All">All Status</option>
-        <option value="Alive">Alive </option>
-        <option value="Dead">Dead</option>
-      </select> */}
     </div>
   );
 }
