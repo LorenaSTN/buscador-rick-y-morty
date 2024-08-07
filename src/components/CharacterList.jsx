@@ -6,7 +6,7 @@ function CharacterList({ characters }) {
     return <CharacterCard key={character.id} characterInfo={character} />;
   });
   return (
-    <section>
+    <section className="list__characters">
       <ul className="list__characters__div">{charactersElements}</ul>
     </section>
   );

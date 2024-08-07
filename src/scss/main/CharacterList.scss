@@ -1,16 +1,7 @@
 .list__characters__div {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-
-  @media screen and (min-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (min-width: 720px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (min-width: 1020px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0px;
 }

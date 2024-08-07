@@ -8,11 +8,15 @@ import Filters from "./filters/Filters";
 import { Routes, Route } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
 import { useLocation, matchPath } from "react-router-dom";
+import localStorage from "./services/localStorage";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState("");
+  const [filterName, setFilterName] = useState(
+    localStorage.get("filterName", "")
+  );
   const [filterSpecies, setFilterSpecies] = useState("All");
+  const [filterStatus, setFilterStatus] = useState("All");
 
   useEffect(() => {
     charactersFromApi().then((charactersData) => {
@@ -23,6 +27,10 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    localStorage.set("filterName", filterName);
+  }, [filterName]);
+
   const handleFilterName = (valueName) => {
     setFilterName(valueName);
   };
@@ -31,11 +39,24 @@ function App() {
     setFilterSpecies(valueSpecies);
   };
 
+  const handleFilterStatus = (valueStatus) => {
+    setFilterStatus(valueStatus);
+  };
+
   const filteredCharactersName = characters.filter((character) => {
-    return (
-      character.name.toLowerCase().includes(filterName.toLowerCase()) &&
-      (filterSpecies === "All" || character.species === filterSpecies)
-    );
+    const matchesName = character.name
+      .toLowerCase()
+      .includes(filterName.toLowerCase());
+
+    const matchesSpecies =
+      filterSpecies === "All" || character.species === filterSpecies;
+
+    const matchesStatus =
+      filterStatus === "All" || character.status === filterStatus;
+
+    console.log(filterStatus);
+
+    return matchesName && matchesSpecies && matchesStatus;
   });
 
   const { pathname } = useLocation();
@@ -44,11 +65,8 @@ function App() {
   const idCharacter =
     routeInfo !== null ? parseInt(routeInfo.params.characterId) : null;
   const characterSelected = characters.find((character) => {
-    console.log(typeof character.id);
-    console.log(typeof idCharacter);
     return character.id === idCharacter;
   });
-  console.log("characterSelected", characterSelected);
 
   return (
     <>
@@ -66,6 +84,8 @@ function App() {
                   valueName={filterName}
                   onChangeSpecies={handleFilterSpecies}
                   valueSpecies={filterSpecies}
+                  onChangeStatus={handleFilterStatus}
+                  valueStatus={filterStatus}
                 />
                 <CharacterList characters={filteredCharactersName} />
               </>

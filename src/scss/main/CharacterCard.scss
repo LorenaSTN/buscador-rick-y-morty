@@ -1,13 +1,32 @@
 .card {
-  background-color: lightblue;
+  background-color: rgb(113, 193, 224);
   width: 200px;
+  margin-bottom: 25px;
+  border: 4px solid rgb(219, 245, 134);
+  border-radius: 10px;
+  margin: 40px;
+  padding: 10px;
 
   &__photo {
     width: 200px;
   }
 
+  &__name {
+    text-align: center;
+    font-size: 18px;
+    margin: 8px;
+    color: rgb(2, 2, 29);
+  }
+
+  &__status {
+    text-align: center;
+    margin: 10px;
+    color: white;
+    font-size: 15px;
+  }
+
   &__link {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(2, 2, 29);
   }
 }

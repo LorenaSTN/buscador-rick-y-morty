@@ -1,0 +1,16 @@
+.inputname {
+  margin-bottom: 30px;
+  width: 200px;
+  border-radius: 20px;
+  border: 2px solid rgb(219, 245, 134);
+  background-color: rgba(227, 248, 254, 0.516);
+  padding: 5px;
+
+  &::placeholder {
+    color: rgb(6, 12, 62);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+  }
+}

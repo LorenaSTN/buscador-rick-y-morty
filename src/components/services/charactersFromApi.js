@@ -9,6 +9,7 @@ function charactersFromApi() {
           photo: character.image,
           name: character.name,
           species: character.species,
+          gender: character.gender,
           location: character.location.name,
           episode: character.episode,
           status: character.status,

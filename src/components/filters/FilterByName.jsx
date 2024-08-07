@@ -1,3 +1,5 @@
+import "../../scss/main/FilterByName.scss";
+
 function FilterByName({ onChangeName, valueName }) {
   const handleChangeName = (ev) => {
     onChangeName(ev.target.value);
@@ -5,9 +7,10 @@ function FilterByName({ onChangeName, valueName }) {
   return (
     <div>
       <input
+        className="inputname"
         type="text"
         id="name"
-        placeholder="Nombre del personaje"
+        placeholder="Character's name"
         onChange={handleChangeName}
         value={valueName}
       />

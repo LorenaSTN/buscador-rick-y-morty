@@ -1,3 +1,5 @@
+import "../../scss/main/FilterBySpecies.scss";
+
 function FilterBySpecies({ onChangeSpecies, valueSpecies }) {
   const handleChangeSpecies = (ev) => {
     onChangeSpecies(ev.target.value);
@@ -9,6 +11,7 @@ function FilterBySpecies({ onChangeSpecies, valueSpecies }) {
         id="species"
         onChange={handleChangeSpecies}
         value={valueSpecies}
+        className="inputselect"
       >
         <option value="All">All Species</option>
         <option value="Human">Human</option>

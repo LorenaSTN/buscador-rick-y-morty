@@ -1,12 +1,36 @@
 import "../scss/main/CharacterDetail.scss";
 import { Link } from "react-router-dom";
+import PhotoNotFound from "../images/characterNotFound.png";
 
 function CharacterDetail({ character }) {
   if (!character) {
-    return <p>Character not found</p>;
+    return (
+      <>
+        <h3 className="characterdetail__notfound">
+          Sorry, the character your searching is not in our list
+        </h3>
+        <img
+          className="image_notFound"
+          src={PhotoNotFound}
+          alt="Character not found"
+        />
+        <Link className="characterdetail__link2" to="/">
+          Back to Home
+        </Link>
+      </>
+    );
   }
 
-  const deadOrAlive = character.status === "Dead" ? "☠️" : "🤍";
+  let deadOrAlive;
+
+  if (character.status === "Dead") {
+    deadOrAlive = "☠️";
+  } else if (character.status === "Alive") {
+    deadOrAlive = "🤍";
+  } else {
+    deadOrAlive = "❔";
+  }
+
   return (
     <div className="characterdetail">
       <Link className="characterdetail__link" to="/">
@@ -17,11 +41,12 @@ function CharacterDetail({ character }) {
         src={character.photo}
         alt={character.name}
       />
-      <h4>{character.name}</h4>
+      <h4 className="characterdetail__name">{character.name}</h4>
       <p> Status: {deadOrAlive}</p>
-      <p> Species:{character.species}</p>
+      <p> Species: {character.species}</p>
+      <p> Gender: {character.gender}</p>
       <p> Origin: {character.location}</p>
-      <p> Episodes:{character.episode.length}</p>
+      <p> Episodes: {character.episode.length}</p>
     </div>
   );
 }
