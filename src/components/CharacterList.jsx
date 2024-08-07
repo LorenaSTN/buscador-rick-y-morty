@@ -1,4 +1,5 @@
 import CharacterCard from "./CharacterCard";
+import "../scss/main/CharacterList.scss";
 
 function CharacterList({ characters }) {
   const charactersElements = characters.map((character) => {
@@ -6,7 +7,7 @@ function CharacterList({ characters }) {
   });
   return (
     <section>
-      <ul>{charactersElements}</ul>
+      <ul className="list__characters__div">{charactersElements}</ul>
     </section>
   );
 }

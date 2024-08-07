@@ -1,3 +1,12 @@
-.header__logo {
-  width: 320px;
+body {
+  background-color: rgb(2, 2, 29);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  &__logo {
+    width: 320px;
+  }
 }

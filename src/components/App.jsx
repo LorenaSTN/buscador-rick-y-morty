@@ -1,4 +1,5 @@
 import "../scss/App.scss";
+
 import CharacterList from "./CharacterList";
 import Logo from "../images/rickandmorty.png";
 import { useEffect, useState } from "react";
@@ -11,10 +12,14 @@ import { useLocation, matchPath } from "react-router-dom";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
+  const [filterSpecies, setFilterSpecies] = useState("All");
 
   useEffect(() => {
     charactersFromApi().then((charactersData) => {
-      setCharacters(charactersData);
+      const charactersSorted = charactersData.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setCharacters(charactersSorted);
     });
   }, []);
 
@@ -22,8 +27,15 @@ function App() {
     setFilterName(valueName);
   };
 
+  const handleFilterSpecies = (valueSpecies) => {
+    setFilterSpecies(valueSpecies);
+  };
+
   const filteredCharactersName = characters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
+    return (
+      character.name.toLowerCase().includes(filterName.toLowerCase()) &&
+      (filterSpecies === "All" || character.species === filterSpecies)
+    );
   });
 
   const { pathname } = useLocation();
@@ -40,7 +52,7 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="header">
         <img className="header__logo" src={Logo} alt="Rick and Morty" />
       </header>
       <main>
@@ -52,6 +64,8 @@ function App() {
                 <Filters
                   onChangeName={handleFilterName}
                   valueName={filterName}
+                  onChangeSpecies={handleFilterSpecies}
+                  valueSpecies={filterSpecies}
                 />
                 <CharacterList characters={filteredCharactersName} />
               </>
