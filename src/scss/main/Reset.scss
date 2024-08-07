@@ -1,0 +1,15 @@
+.reset {
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(219, 245, 134);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

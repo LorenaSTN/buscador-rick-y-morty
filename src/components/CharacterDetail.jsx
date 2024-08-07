@@ -1,23 +1,24 @@
 import "../scss/main/CharacterDetail.scss";
 import { Link } from "react-router-dom";
 import PhotoNotFound from "../images/characterNotFound.png";
+import ImageNotFound from "../images/rick-morty.webp";
 
 function CharacterDetail({ character }) {
   if (!character) {
     return (
-      <>
+      <div className="characterdetail2">
         <h3 className="characterdetail__notfound">
-          Sorry, the character your searching is not in our list
+          Sorry, the character your searching for is not in our list
         </h3>
         <img
           className="image_notFound"
-          src={PhotoNotFound}
+          src={ImageNotFound}
           alt="Character not found"
         />
         <Link className="characterdetail__link2" to="/">
           Back to Home
         </Link>
-      </>
+      </div>
     );
   }
 

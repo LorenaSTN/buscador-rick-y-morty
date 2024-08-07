@@ -23,14 +23,16 @@
   }
 
   &__link2 {
-    color: rgb(9, 3, 31);
+    color: rgb(219, 245, 134);
+    font-weight: bolder;
     text-decoration: none;
     margin-left: 60%;
     margin-bottom: 30px;
     padding: 10px;
     border-radius: 20px;
-    background-color: rgb(83, 178, 183);
+    background-color: rgb(42, 141, 156);
     cursor: pointer;
+    border: 2px solid rgb(219, 245, 134);
   }
 
   &__name {
@@ -41,7 +43,8 @@
   &__notfound {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: rgb(83, 178, 183);
+    color: rgb(42, 141, 156);
+    font-size: 15px;
     margin: 0 auto;
     text-align: center;
   }
@@ -58,4 +61,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  width: 100%;
+}
+
+.characterdetail2 {
+  padding: 15px;
+  margin: 0 auto;
+  width: 50%;
 }

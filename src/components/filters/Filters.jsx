@@ -13,12 +13,14 @@ function Filters({
 }) {
   return (
     <form className="form">
-      <FilterByName onChangeName={onChangeName} valueName={valueName} />
+      <section className="form__section">
+        <FilterByName onChangeName={onChangeName} valueName={valueName} />
 
-      <FilterBySpecies
-        onChangeSpecies={onChangeSpecies}
-        valueSpecies={valueSpecies}
-      />
+        <FilterBySpecies
+          onChangeSpecies={onChangeSpecies}
+          valueSpecies={valueSpecies}
+        />
+      </section>
       <FilterByStatus
         onChangeStatus={onChangeStatus}
         valueStatus={valueStatus}

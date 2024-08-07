@@ -6,7 +6,6 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
   };
   return (
     <div>
-      <label htmlFor="All">All</label>
       <input
         onChange={handleChangeStatus}
         type="radio"
@@ -15,7 +14,8 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         value="All"
         checked={valueStatus === "All"}
       />
-      <label htmlFor="Alive">Alive</label>
+      <label htmlFor="All">All</label>
+
       <input
         onChange={handleChangeStatus}
         type="radio"
@@ -24,7 +24,8 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         value="Alive"
         checked={valueStatus === "Alive"}
       />
-      <label htmlFor="Dead">Dead</label>
+      <label htmlFor="Alive">Alive</label>
+
       <input
         onChange={handleChangeStatus}
         type="radio"
@@ -33,7 +34,8 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         value="Dead"
         checked={valueStatus === "Dead"}
       />
-      <label htmlFor="unknown">Unknown</label>
+      <label htmlFor="Dead">Dead</label>
+
       <input
         onChange={handleChangeStatus}
         type="radio"
@@ -42,6 +44,7 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         value="unknown"
         checked={valueStatus === "unknown"}
       />
+      <label htmlFor="unknown">Unknown</label>
     </div>
   );
 }

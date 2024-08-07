@@ -9,14 +9,19 @@ import { Routes, Route } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
 import { useLocation, matchPath } from "react-router-dom";
 import localStorage from "./services/localStorage";
+import Reset from "./Reset";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(
     localStorage.get("filterName", "")
   );
-  const [filterSpecies, setFilterSpecies] = useState("All");
-  const [filterStatus, setFilterStatus] = useState("All");
+  const [filterSpecies, setFilterSpecies] = useState(
+    localStorage.get("filterSpecies", "All")
+  );
+  const [filterStatus, setFilterStatus] = useState(
+    localStorage.get("filterStatus", "All")
+  );
 
   useEffect(() => {
     charactersFromApi().then((charactersData) => {
@@ -29,7 +34,9 @@ function App() {
 
   useEffect(() => {
     localStorage.set("filterName", filterName);
-  }, [filterName]);
+    localStorage.set("filterStatus", filterStatus);
+    localStorage.set("filterSpecies", filterSpecies);
+  }, [filterName, filterStatus, filterSpecies]);
 
   const handleFilterName = (valueName) => {
     setFilterName(valueName);
@@ -68,6 +75,13 @@ function App() {
     return character.id === idCharacter;
   });
 
+  const handleReset = () => {
+    setFilterName("");
+    setFilterSpecies("All");
+    setFilterStatus("All");
+    localStorage.clear();
+  };
+
   return (
     <>
       <header className="header">
@@ -87,6 +101,7 @@ function App() {
                   onChangeStatus={handleFilterStatus}
                   valueStatus={filterStatus}
                 />
+                <Reset onClickReset={handleReset} />
                 <CharacterList characters={filteredCharactersName} />
               </>
             }
