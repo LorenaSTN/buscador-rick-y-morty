@@ -6,7 +6,8 @@ Esta aplicación web es el resultado de la evaluación final del tercer módulo(
 
 El proyecto es una galeria de los personajes de la serie "Rick y Morty", la cual accedemos a toda la información a través de la API: https://rickandmortyapi.com/documentation/#get-all-characters. Dicha aplicación permite filtrar los resultados de la galeria por nonbre, especie y estado. Si clickamos sobre cualquiera de los personajes, podemos obtener información más detallada.
 
-<img width="600" alt="Captura de pantalla 2024-08-07 a las 18 19 57" src="https://github.com/user-attachments/assets/de0f163a-c8f2-4106-98c0-2af218c41f86">
+<img width="1440" alt="Captura de pantalla 2024-08-08 a las 10 06 42" src="https://github.com/user-attachments/assets/523bc172-2cc9-4512-841a-19c088f5e5a8">
+
 
 
 ## Instrucciones
