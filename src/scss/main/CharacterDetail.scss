@@ -18,21 +18,21 @@
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 20px;
-    background-color: rgb(2, 17, 54);
+    background-color: rgb(2, 2, 29);
     cursor: pointer;
   }
 
   &__link2 {
-    color: rgb(219, 245, 134);
+    color: rgb(46, 195, 200);
     font-weight: bolder;
     text-decoration: none;
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
-    background-color: rgb(42, 141, 156);
+    background-color: rgb(5, 8, 34);
     cursor: pointer;
-    border: 2px solid rgb(219, 245, 134);
-    font-size: 12px;
+    border: 2px solid rgb(46, 195, 200);
+    font-size: 16px;
   }
 
   &__name {
@@ -41,10 +41,11 @@
   }
 
   &__notfound {
+    margin-top: 20px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: rgb(42, 141, 156);
-    font-size: 15px;
+    color: rgb(46, 195, 200);
+    font-size: 20px;
     margin: 0 auto;
     text-align: center;
   }
@@ -61,7 +62,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 100%;
+  height: 70%;
 }
 
 .characterdetail2 {

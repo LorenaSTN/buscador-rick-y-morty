@@ -59,13 +59,10 @@ function App() {
     const matchesStatus =
       filterStatus === "All" || character.status === filterStatus;
 
-    console.log(filterStatus);
-
     return matchesName && matchesSpecies && matchesStatus;
   });
 
   const { pathname } = useLocation();
-  console.log(pathname);
   const routeInfo = matchPath("/detail/:characterId", pathname);
   const idCharacter =
     routeInfo !== null ? parseInt(routeInfo.params.characterId) : null;
@@ -100,6 +97,7 @@ function App() {
                   valueStatus={filterStatus}
                 />
                 <Reset onClickReset={handleReset} />
+
                 <CharacterList characters={filteredCharactersName} />
               </>
             }
