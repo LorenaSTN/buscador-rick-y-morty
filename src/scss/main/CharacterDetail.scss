@@ -24,16 +24,16 @@
   }
 
   &__link2 {
-    color: rgb(46, 195, 200);
+    color: rgb(2, 2, 29);
     font-weight: bolder;
     text-decoration: none;
     margin-bottom: 30px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px;
-    background-color: rgb(5, 8, 34);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
-    border: 2px solid rgb(46, 195, 200);
-    font-size: 16px;
+    border: 2px solid rgb(219, 245, 134);
+    font-size: 14px;
   }
 
   &__name {
@@ -46,7 +46,7 @@
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: rgb(46, 195, 200);
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 auto;
     text-align: center;
   }
