@@ -9,6 +9,8 @@ import CharacterDetail from "./CharacterDetail";
 import localStorage from "./services/localStorage";
 import Reset from "./Reset";
 
+// PEGAR API  https://rickandmortyapi.com/documentation/#get-all-characters
+
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(
@@ -20,6 +22,8 @@ function App() {
   const [filterStatus, setFilterStatus] = useState(
     localStorage.get("filterStatus", "All")
   );
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     charactersFromApi().then((charactersData) => {
@@ -62,6 +66,14 @@ function App() {
     return matchesName && matchesSpecies && matchesStatus;
   });
 
+  useEffect(() => {
+    if (filteredCharactersName.length === 0) {
+      setErrorMessage(`No characters match ${filterName} `);
+    } else {
+      setErrorMessage("");
+    }
+  }, [filteredCharactersName]);
+
   const { pathname } = useLocation();
   const routeInfo = matchPath("/detail/:characterId", pathname);
   const idCharacter =
@@ -97,8 +109,11 @@ function App() {
                   valueStatus={filterStatus}
                 />
                 <Reset onClickReset={handleReset} />
-
-                <CharacterList characters={filteredCharactersName} />
+                {errorMessage ? (
+                  <p className="error_message">{errorMessage}</p>
+                ) : (
+                  <CharacterList characters={filteredCharactersName} />
+                )}
               </>
             }
           />
