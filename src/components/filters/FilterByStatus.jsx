@@ -13,6 +13,7 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         name="All"
         value="All"
         checked={valueStatus === "All"}
+        className="inputRadio"
       />
       <label htmlFor="All">All</label>
 
@@ -23,6 +24,7 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         name="Alive"
         value="Alive"
         checked={valueStatus === "Alive"}
+        className="inputRadio"
       />
       <label htmlFor="Alive">Alive</label>
 
@@ -33,6 +35,7 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         name="Dead"
         value="Dead"
         checked={valueStatus === "Dead"}
+        className="inputRadio"
       />
       <label htmlFor="Dead">Dead</label>
 
@@ -43,6 +46,7 @@ function FilterByStatus({ onChangeStatus, valueStatus }) {
         name="unknown"
         value="unknown"
         checked={valueStatus === "unknown"}
+        className="inputRadio"
       />
       <label htmlFor="unknown">Unknown</label>
     </div>

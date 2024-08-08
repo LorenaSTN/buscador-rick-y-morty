@@ -18,7 +18,7 @@ function App() {
     localStorage.get("filterSpecies", "All")
   );
   const [filterStatus, setFilterStatus] = useState(
-    localStorage.get("filterStatus", "All")
+    localStorage.get("filterStatus", "")
   );
 
   const [errorMessage, setErrorMessage] = useState("");
