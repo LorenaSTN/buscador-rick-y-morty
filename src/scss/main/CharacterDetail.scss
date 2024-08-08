@@ -2,10 +2,14 @@
   background-color: rgb(113, 193, 224);
   display: flex;
   flex-direction: column;
-  width: 310px;
+  width: 290px;
   padding: 15px;
   margin: 0 auto;
   border-radius: 10px;
+
+  @media screen and (min-width: 720px) {
+    width: 320px;
+  }
 
   &__image {
     width: 100%;
@@ -63,7 +67,14 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 70%;
+  width: 300px;
+
+  @media screen and (min-width: 560px) {
+    width: 500px;
+  }
+  @media screen and (min-width: 7200px) {
+    width: 700px;
+  }
 }
 
 .characterdetail2 {
