@@ -9,8 +9,6 @@ import CharacterDetail from "./CharacterDetail";
 import localStorage from "./services/localStorage";
 import Reset from "./Reset";
 
-// PEGAR API  https://rickandmortyapi.com/documentation/#get-all-characters
-
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(
@@ -26,12 +24,17 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    charactersFromApi().then((charactersData) => {
-      const charactersSorted = charactersData.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-      setCharacters(charactersSorted);
-    });
+    charactersFromApi()
+      .then((charactersData) => {
+        const charactersSorted = charactersData.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+        setCharacters(charactersSorted);
+        setErrorMessage("");
+      })
+      .catch((error) => {
+        setErrorMessage("Error loading characters. Please try again later.");
+      });
   }, []);
 
   useEffect(() => {

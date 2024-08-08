@@ -1,8 +1,11 @@
 function charactersFromApi() {
-  return fetch(
-    "https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json"
-  )
-    .then((response) => response.json())
+  return fetch("https://rickandmortyapi.com/api/character")
+    .then((response) => {
+      if (!response.ok) {
+        throw Error("API response is not working");
+      }
+      return response.json();
+    })
     .then((data) => {
       const charactersList = data.results.map((character) => {
         return {
@@ -17,6 +20,9 @@ function charactersFromApi() {
         };
       });
       return charactersList;
+    })
+    .catch((error) => {
+      throw error;
     });
 }
 
