@@ -68,7 +68,7 @@ function App() {
 
   useEffect(() => {
     if (filteredCharactersName.length === 0) {
-      setErrorMessage(`No characters match ${filterName} `);
+      setErrorMessage(`No characters match "${filterName}" `);
     } else {
       setErrorMessage("");
     }
