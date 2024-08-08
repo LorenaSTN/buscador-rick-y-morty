@@ -24,17 +24,13 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    charactersFromApi()
-      .then((charactersData) => {
-        const charactersSorted = charactersData.sort((a, b) =>
-          a.name.localeCompare(b.name)
-        );
-        setCharacters(charactersSorted);
-        setErrorMessage("");
-      })
-      .catch((error) => {
-        setErrorMessage("Error loading characters. Please try again later.");
-      });
+    charactersFromApi().then((charactersData) => {
+      const charactersSorted = charactersData.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setCharacters(charactersSorted);
+      setErrorMessage("");
+    });
   }, []);
 
   useEffect(() => {
@@ -71,7 +67,7 @@ function App() {
 
   useEffect(() => {
     if (filteredCharactersName.length === 0) {
-      setErrorMessage(`No characters match "${filterName}" `);
+      setErrorMessage(`No characters match ${filterName} `);
     } else {
       setErrorMessage("");
     }

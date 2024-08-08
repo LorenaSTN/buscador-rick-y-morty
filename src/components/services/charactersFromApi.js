@@ -1,9 +1,6 @@
 function charactersFromApi() {
   return fetch("https://rickandmortyapi.com/api/character")
     .then((response) => {
-      if (!response.ok) {
-        throw Error("API response is not working");
-      }
       return response.json();
     })
     .then((data) => {
@@ -20,9 +17,6 @@ function charactersFromApi() {
         };
       });
       return charactersList;
-    })
-    .catch((error) => {
-      throw error;
     });
 }
 
