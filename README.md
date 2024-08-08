@@ -6,7 +6,7 @@ El proyecto es una galeria de los personajes de la serie "Rick y Morty", la cual
 
 <img width="700" alt="Captura de pantalla 2024-08-07 a las 18 19 57" src="https://github.com/user-attachments/assets/de0f163a-c8f2-4106-98c0-2af218c41f86">
 
-Si clickamos sobre cualquiera de los personajes, podemos obterner información más detallada.
+Si clickamos sobre cualquiera de los personajes, podemos obtener información más detallada.
 
 
 ## Instrucciones
