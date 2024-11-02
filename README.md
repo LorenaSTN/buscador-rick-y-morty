@@ -15,7 +15,7 @@ El proyecto es una galeria de los personajes de la serie "Rick y Morty", la cual
 Para arrancar el proyecto en un servidor local primero hay que instalar las dependencias usando el siguiente comando en la terminal:
 
 ```
-npm instal
+npm install
 ```
 
 Para arrancar el servidor, el comando:
