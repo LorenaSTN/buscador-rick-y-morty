@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Buscador-personajes-Rick-y-Morty/",
+  base: "/buscador-rick-y-morty/",
 });
